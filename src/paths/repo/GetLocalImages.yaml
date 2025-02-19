@@ -1,0 +1,18 @@
+tags:
+  - repo
+summary: Get local images
+description: Get local images
+operationId: getLocalImages
+responses:
+  200:
+    description: Local images retrieved successfully
+    content:
+      application/json:
+        schema:
+          $ref: "@/schemas/repo/response/GetLocalImagesResponse.yaml"
+  500:
+    description: Internal Server Error
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"

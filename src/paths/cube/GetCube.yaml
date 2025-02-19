@@ -1,0 +1,33 @@
+tags:
+  - cube
+summary: Get Cube
+description: Get Cube
+operationId: getCube
+parameters:
+  - name: cubeID
+    in: path
+    description: ID of the workspace to get
+    required: true
+    schema:
+      type: integer
+      example: 1
+
+responses:
+  200:
+    description: Cube created successfully
+    content:
+      application/json:
+        schema:
+          $ref: "@/schemas/cube/response/GetCubeResponse.yaml"
+  400:
+    description: Invalid input
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"
+  500:
+    description: Unauthorized
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"

@@ -1,0 +1,32 @@
+tags:
+  - workspace
+summary: Get Workspace By ID
+description: Get Workspace By ID
+operationId: getWorkspaceByID
+parameters:
+  - name: workspaceID
+    in: path
+    description: ID of the workspace to get
+    required: true
+    schema:
+      type: integer
+      example: 1
+responses:
+  200:
+    description: Workspace retrieved successfully
+    content:
+      application/json:
+        schema:
+          $ref: "@/schemas/workspace/response/GetWorkspaceByIDResponse.yaml"
+  400:
+    description: Invalid input
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"
+  500:
+    description: Unauthorized
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"

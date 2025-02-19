@@ -1,0 +1,30 @@
+tags:
+  - proxy
+summary: Create a proxy
+description: Create a new proxy with a name and description
+operationId: createProxy
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: '@/schemas/proxy/request/CreateProxyRequest.yaml'
+responses:
+  201:
+    description: Proxy created successfully
+    content:
+      application/json:
+        schema:
+          $ref: '@/schemas/proxy/response/CreateProxyResponse.yaml'
+  400:
+    description: Invalid input
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ErrorResponse'
+  500:
+    description: Internal Server Error
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ErrorResponse'

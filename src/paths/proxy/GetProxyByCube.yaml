@@ -1,0 +1,32 @@
+tags:
+  - proxy
+summary: Get a proxy by cube
+description: Get a proxy by cube
+operationId: getProxyByCube
+parameters:
+  - name: proxyID
+    in: path
+    description: ID of the workspace to get
+    required: true
+    schema:
+      type: integer
+      example: 1
+responses:
+  200:
+    description: Proxy created successfully
+    content:
+      application/json:
+        schema:
+          $ref: "@/schemas/proxy/response/GetProxyByCubeResponse.yaml"
+  400:
+    description: Invalid input
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"
+  500:
+    description: Unauthorized
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"

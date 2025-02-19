@@ -1,0 +1,48 @@
+type: object
+description: Configuration for a single container in the workspace
+properties:
+
+  name:
+    type: string
+    description: The name of the container
+    example: "Container 1"
+  image:
+    type: string
+    description:  Docker image to use
+    example: "nginx:latest"
+  ports:
+    type: array
+    items:
+      type: string
+      description: Port mappings (host:container)
+      example: ["8080:80"]
+  environment:
+    type: array
+    items:
+      type: string
+      description: Environment variables
+      example: ["VAR1=value1", "VAR2=value2"]
+  volumes:
+    type: array
+    items:
+      type: string
+      description: Volumes to mount
+      example: ["/host/path:/container/path"]
+  labels:
+    type: array
+    items:
+      type: string
+      description: Labels to apply
+      example: ["label1=value1", "label2=value2"]
+  resource_limits:
+    type: object
+    description: Resource limits for the container
+    properties:
+      cpu:
+        type: string
+        description: CPU limit
+        example: "1"
+      memory:
+        type: string
+        description: Memory limit
+        example: "1G"

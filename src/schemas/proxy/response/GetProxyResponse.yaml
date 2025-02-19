@@ -1,0 +1,20 @@
+type: object
+properties:
+  id:
+    type: integer
+    description: ID of the proxy
+  cube_id:
+    type: integer
+    description: ID of the cube associated with the proxy
+  domain:
+    type: string
+    description: Domain name for the proxy
+  port:
+    type: integer
+    description: Port number for the proxy
+  type:
+    type: string
+    description: Type of proxy
+  default:
+    type: boolean
+    description: Whether this is the default proxy

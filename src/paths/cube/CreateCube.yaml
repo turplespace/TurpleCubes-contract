@@ -1,0 +1,24 @@
+tags:
+  - cube
+summary: Create Cube
+description: Create Cube
+operationId: createCube
+
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: "@/schemas/cube/request/CreateCubeRequest.yaml"
+responses:
+  201:
+    description: Cube created successfully
+    content:
+      application/json:
+        schema:
+          $ref: "@/schemas/cube/response/CreateCubeResponse.yaml"
+  500:
+    description: Internal Server Error
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"

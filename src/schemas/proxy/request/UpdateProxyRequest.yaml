@@ -1,0 +1,14 @@
+type: object
+properties:
+  domain:
+    type: string
+    description: Domain name for the proxy
+  port:
+    type: integer
+    description: Port number for the proxy
+  type:
+    type: string
+    description: Type of proxy
+  default:
+    type: boolean
+    description: Whether this is the default proxy

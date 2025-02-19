@@ -1,0 +1,43 @@
+tags:
+  - workspace
+summary: Create a workspace
+description: Create a new workspace with a name and description
+operationId: createWorkspace
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: '@/schemas/workspace/request/CreateWorkspaceRequest.yaml'
+
+responses:
+  '201':
+    description: Workspace created successfully
+    content:
+      application/json:
+        schema:
+          $ref: '@/schemas/workspace/response/CreateWorkspaceResponse.yaml'
+  '400':
+    description: Invalid input
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ErrorResponse'
+  '401':
+    description: Unauthorized
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ErrorResponse'
+  '403':
+    description: Forbidden
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ErrorResponse'
+  '500':
+    description: Internal Server Error
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ErrorResponse'

@@ -1,0 +1,38 @@
+type: object
+properties:
+  total_workspace:
+    type: integer
+    example: 3
+  total_cubes: 
+    type: integer
+    example: 30
+  total_running_cubes:
+    type: integer
+    example: 10
+  workspaces:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 10
+        name:
+          type: string
+          example: "Workspace Name"
+        desc:
+          type: string
+          example: "Workspace Description"
+        total_containers:
+          type: integer
+          example: 10
+        running_containers:
+          type: integer
+          example: 3
+        status:
+          type: string
+          example: "pending"
+        created_at:
+          type: string
+          format: date-time
+          example: "2025-02-16T00:00:00Z"

@@ -1,0 +1,37 @@
+tags:
+  - proxy
+summary: Deploy a proxy
+description: Deploy a proxy
+operationId: deployProxy
+parameters:
+  - name: proxyID
+    in: path
+    description: ID of the proxy
+    required: true
+    schema:
+      type: integer
+responses:
+  '200':
+    description: Success
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/SuccessResponse'
+  '400':
+    description: Bad request
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ErrorResponse'
+  '404':
+    description: Not found
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ErrorResponse'
+  '500':
+    description: Internal server error
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/ErrorResponse'

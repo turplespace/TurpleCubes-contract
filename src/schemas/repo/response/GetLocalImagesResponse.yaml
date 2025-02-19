@@ -1,0 +1,33 @@
+type: object
+properties:
+  custom_images:
+    type: array
+    items:
+      type: object
+      properties:
+        image:
+          type: string
+          description: Name of the image
+        tag:
+          type: string
+          description: Image tag (version)
+        desc:
+          type: string
+          description: Description of the image
+        labels:
+          type: array
+          items:
+            type: string
+          description: Labels associated with the image
+        env:
+          type: array
+          items:
+            type: string
+          description: Environment variables for the image
+        size:
+          type: string
+          description: Size of the image
+        pulled_on:
+          type: string
+          format: date-time
+          description: Timestamp of when the image was pulled

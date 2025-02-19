@@ -1,0 +1,42 @@
+tags:
+  - proxy
+summary: Update a proxy
+description: Update a proxy
+operationId: updateProxy
+parameters:
+  - name: proxyID
+    in: path
+    description: ID of the proxy
+    required: true
+    schema:
+      type: integer
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: "@/schemas/proxy/request/UpdateProxyRequest.yaml"
+responses:
+  '200':
+    description: Success
+    content:
+      application/json:
+        schema:
+          $ref: "@/schemas/common/SuccessResponse.yaml"
+  '400':
+    description: Bad request
+    content:
+      application/json:
+        schema:
+          $ref: "@/schemas/common/ErrorResponse.yaml"
+  '404':
+    description: Not found
+    content:
+      application/json:
+        schema:
+          $ref: "@/schemas/common/ErrorResponse.yaml"
+  '500':
+    description: Internal server error
+    content:
+      application/json:
+        schema:
+          $ref: "@/schemas/common/ErrorResponse.yaml"

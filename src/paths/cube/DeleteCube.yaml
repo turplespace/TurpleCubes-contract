@@ -1,0 +1,32 @@
+tags:
+  - cube
+summary: Delete Cube
+description: Delete Cube
+operationId: deleteCube
+parameters:
+  - name: cubeID
+    in: path
+    description: ID of the workspace to get
+    required: true
+    schema:
+      type: integer
+      example: 1
+responses:
+  200:
+    description: Cube deleted successfully
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/SuccessResponse"
+  400:
+    description: Invalid input
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"
+  500:
+    description: Unauthorized
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"

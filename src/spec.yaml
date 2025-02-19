@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+  title: TurpleCubes Api
+  version: 0.1.0
+  description: This is the contract for TurpleCubes api
+components:
+  schemas:
+    ErrorResponse:
+      $ref: "@/schemas/common/ErrorResponse.yaml"
+    SuccessResponse:
+      $ref: "@/schemas/common/SuccessResponse.yaml"
+paths:
+  /api/workspace:
+    get:
+      $ref: "@/paths/workspace/GetWorkspace.yaml"
+    post:
+      $ref: "@/paths/workspace/CreateWorkspace.yaml"
+  /api/workspace/{workspaceID}:
+    get:
+      $ref: "@/paths/workspace/GetWorkspaceByID.yaml"
+    put:
+      $ref: "@/paths/workspace/UpdateWorkspace.yaml"
+    delete:
+      $ref: "@/paths/workspace/DeleteWorkspace.yaml"
+
+  /api/workspace/{workspaceID}/deploy:
+    post:
+      $ref: "@/paths/workspace/DeployWorkspace.yaml"
+
+  /api/workspace/{workspaceID}/redeploy:
+    post:
+      $ref: "@/paths/workspace/RedeployWorkspace.yaml"
+
+  /api/workspace/{workspaceID}/stop:
+    post:
+      $ref: "@/paths/workspace/StopWorkspace.yaml"
+
+  /api/cube:
+    post:
+      $ref: "@/paths/cube/CreateCube.yaml"
+  /api/cube/{cubeID}:
+    get:
+      $ref: "@/paths/cube/GetCube.yaml"
+    put:
+      $ref: "@/paths/cube/UpdateCube.yaml"
+    delete:
+      $ref: "@/paths/cube/DeleteCube.yaml"
+
+  /api/cube/{cubeID}/deploy:
+    post:
+      $ref: "@/paths/cube/DeployCube.yaml"
+
+  /api/cube/{cubeID}/redeploy:
+    post:
+      $ref: "@/paths/cube/RedeployCube.yaml"
+
+  /api/cube/{cubeID}/stop:
+    post:
+      $ref: "@/paths/cube/StopCube.yaml"
+
+  /api/cube/{cubeID}/commit:
+    post:
+      $ref: "@/paths/cube/CommitCube.yaml"
+
+  /api/repo/local:
+    get:
+      $ref: "@/paths/repo/GetLocalImages.yaml"
+
+  /api/proxy:
+    post:
+      $ref: "@/paths/proxy/CreateProxy.yaml"
+  /api/proxy/{proxyID}:
+    get:
+      $ref: "@/paths/proxy/GetProxy.yaml"
+    put:
+      $ref: "@/paths/proxy/UpdateProxy.yaml"
+    delete:
+      $ref: "@/paths/proxy/DeleteProxy.yaml"
+
+  /api/proxy/{proxyID}/deploy:
+    post:
+      $ref: "@/paths/proxy/DeployProxy.yaml"
+
+  /api/proxy/{proxyID}/redeploy:
+    post:
+      $ref: "@/paths/proxy/RedeployProxy.yaml"
+
+  /api/proxy/{proxyID}/stop:
+    post:
+      $ref: "@/paths/proxy/StopProxy.yaml"
+
+  /api/proxy/by-cube/{proxyID}:
+    get:
+      $ref: "@/paths/proxy/GetProxyByCube.yaml"
+    delete:
+      $ref: "@/paths/proxy/DeleteProxyByCube.yaml"

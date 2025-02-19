@@ -1,0 +1,19 @@
+tags:
+  - workspace
+summary: Get workspace
+description: Get workspace
+operationId: getWorkspace
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: "@/schemas/workspace/response/GetWorkspaceResponse.yaml"
+  
+  500:
+    description: Internal Server Error
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"

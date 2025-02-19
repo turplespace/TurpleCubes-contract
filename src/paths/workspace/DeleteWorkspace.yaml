@@ -1,0 +1,32 @@
+tags:
+  - workspace
+summary: Delete Workspace
+description: Delete Workspace
+operationId: deleteWorkspace
+parameters:
+  - name: workspaceID
+    in: path
+    description: ID of the workspace to delete
+    required: true
+    schema:
+      type: integer
+      example: 1
+responses:
+  204:
+    description: Workspace deleted successfully
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/SuccessResponse"
+  400:
+    description: Invalid input
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"
+  500:
+    description: Unauthorized
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"

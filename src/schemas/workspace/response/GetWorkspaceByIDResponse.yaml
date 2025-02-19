@@ -1,0 +1,18 @@
+type: object
+properties:
+  container_id:
+    type: integer
+    description: ID of the container
+  image:
+    type: string
+    description: Docker image used for the container
+  container_name:
+    type: string
+    description: Name of the container
+  ip_address:
+    type: string
+    description: IP address of the container (optional)
+    nullable: true
+  status:
+    type: string
+    description: Current status of the container

@@ -1,0 +1,32 @@
+tags:
+  - workspace
+summary: Deploy Workspace
+description: Deploy Workspace
+operationId: deployWorkspace
+parameters:
+  - name: workspaceID
+    in: path
+    description: ID of the workspace to get
+    required: true
+    schema:
+      type: integer
+      example: 1
+responses:
+  200:
+    description: Workspace deployed successfully
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/SuccessResponse"
+  400:
+    description: Invalid input
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"
+  500:
+    description: Unauthorized
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/ErrorResponse"

@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "js-yaml": "^4.1.0",
+    "openapi-typescript": "^7.6.0",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "build": "node index.js && npx openapi-typescript dist/schema.yaml --output dist/types.ts"
+  }
+}

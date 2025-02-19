@@ -1,0 +1,12 @@
+type: object
+required:
+  - id
+  - desc
+  - name
+properties:
+  name:
+    type: string
+    example: "New Workspace"
+  desc:
+    type: string
+    example: "Description of the workspace"
